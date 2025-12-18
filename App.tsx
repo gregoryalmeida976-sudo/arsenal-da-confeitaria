@@ -158,7 +158,7 @@ const App: React.FC = () => {
                   </li>
                    <li className="flex items-start gap-3 bg-red-900/20 p-2 rounded border border-red-900/30">
                     <AlertCircle className="w-5 h-5 text-red-400 shrink-0" />
-                    <span className="text-red-300 text-xs font-bold text-left">Risco maior de errar o ponto da receita sem ver o vídeo</span>
+                    <span className="text-red-300 text-xs font-bold text-left">Risco maior de errar o ponto sem ver o vídeo</span>
                   </li>
                 </ul>
 
@@ -174,7 +174,7 @@ const App: React.FC = () => {
               </div>
             </div>
 
-            {/* AVISO DE TRANSIÇÃO SOLICITADO */}
+            {/* AVISO DE TRANSIÇÃO */}
             <div className="text-center py-4 flex flex-col items-center gap-4">
                <div className="h-px w-24 bg-slate-700"></div>
                <p className="text-amber-400 font-black text-xl md:text-2xl uppercase italic tracking-tighter drop-shadow-md animate-bounce px-4">
@@ -247,29 +247,6 @@ const App: React.FC = () => {
         </div>
       </section>
 
-      {/* Guarantee Section */}
-      <section className="bg-white py-12 border-b border-slate-100">
-        <div className="max-w-4xl mx-auto px-4 flex flex-col md:flex-row items-center gap-8">
-          <div className="relative w-32 h-32 flex-shrink-0">
-             <div className="absolute inset-0 bg-amber-400 blur-xl opacity-40 rounded-full animate-pulse"></div>
-             <div className="relative w-full h-full bg-gradient-to-br from-amber-100 via-amber-300 to-amber-500 rounded-full p-1 shadow-2xl">
-                <div className="w-full h-full bg-white rounded-full border-[6px] border-amber-400 border-double flex flex-col items-center justify-center p-2 text-center">
-                   <ShieldCheck className="w-8 h-8 text-amber-500 mb-1" />
-                   <span className="text-amber-600 font-black text-3xl leading-none">7</span>
-                   <span className="text-[10px] uppercase font-bold text-amber-600 tracking-wider">Dias de<br/>Garantia</span>
-                </div>
-             </div>
-          </div>
-          <div className="text-center md:text-left space-y-4">
-             <h3 className="text-2xl font-bold text-slate-900">Risco Zero para Você</h3>
-             <p className="text-slate-600">
-               Nós confiamos tanto no método que, se em 7 dias você achar que não valeu a pena, nós devolvemos 100% do seu dinheiro. Sem perguntas.
-             </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Footer */}
       <footer className="bg-slate-900 text-slate-400 py-12 px-4 text-center text-sm">
          <div className="max-w-4xl mx-auto space-y-6">
            <span className="text-white font-bold text-xl">Arsenal da Confeitaria</span>
