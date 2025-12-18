@@ -307,7 +307,7 @@ const App: React.FC = () => {
         </div>
       </section>
 
-      {/* Pricing Section */}
+      {/* Pricing Section - ORDEM ALTERADA CONFORME SOLICITAÇÃO */}
       <section id="pricing" className="py-20 px-4 bg-slate-900 relative overflow-hidden">
         {/* Background Gradients */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-[radial-gradient(circle,_var(--tw-gradient-stops))] from-rose-900/20 via-slate-900 to-slate-900 pointer-events-none"></div>
@@ -320,38 +320,33 @@ const App: React.FC = () => {
             </div>
           </div>
 
-          <div className="flex flex-col md:flex-row gap-8 items-stretch justify-center">
+          <div className="flex flex-col gap-12 items-center justify-center max-w-2xl mx-auto">
             
-            {/* Downsell Card (Ghost) - PDF primeiro como opção de entrada */}
-            <div className="order-2 md:order-1 bg-slate-800/50 backdrop-blur-sm rounded-3xl w-full max-w-sm border border-slate-700 md:mt-12 flex flex-col h-fit opacity-80 hover:opacity-100 transition-opacity">
-              <div className="p-6 text-center border-b border-slate-700">
-                <h3 className="text-xl font-bold text-slate-300 uppercase tracking-widest leading-none">Pacote PDF</h3>
-                <p className="text-slate-500 text-[10px] font-bold tracking-widest mt-1 uppercase">(APENAS RECEITAS ESCRITAS)</p>
-              </div>
-              <div className="p-6">
-                <div className="text-center mb-6">
+            {/* Pacote PDF (R$ 10,00) - APARECE POR PRIMEIRO */}
+            <div className="bg-slate-800/50 backdrop-blur-sm rounded-3xl w-full border border-slate-700 p-8 text-center flex flex-col group hover:border-slate-500 transition-colors shadow-2xl">
+                <div className="mb-2">
+                   <h3 className="text-xl font-bold text-slate-300 uppercase tracking-widest leading-none">Pacote PDF</h3>
+                   <p className="text-slate-500 text-[10px] font-bold tracking-widest mt-1 uppercase">(APENAS RECEITAS ESCRITAS)</p>
+                </div>
+                <div className="my-8">
                   <div className="flex items-center justify-center gap-1 text-slate-300">
                     <span className="text-xl font-bold">R$</span>
                     <span className="text-5xl font-black tracking-tighter leading-none">10,00</span>
                   </div>
                 </div>
 
-                <ul className="space-y-4 mb-8">
+                <ul className="text-left space-y-4 mb-8 border-y border-slate-700/50 py-6">
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-slate-500 shrink-0" />
-                    <span className="text-slate-400 text-sm text-left">Apenas Receitas escritas digitalmente</span>
+                    <span className="text-slate-400 text-sm">Todas as Receitas em formato digital PDF</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <XCircle className="w-5 h-5 text-red-500 shrink-0" />
-                    <span className="text-slate-400 text-sm text-left line-through decoration-red-500/50 italic opacity-60">SEM as Vídeo Aulas 4K</span>
+                    <span className="text-slate-400 text-sm line-through decoration-red-500/50 italic opacity-60">SEM as Vídeo Aulas Passo a Passo</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <XCircle className="w-5 h-5 text-red-500 shrink-0" />
-                    <span className="text-slate-400 text-sm text-left line-through decoration-red-500/50 italic opacity-60">SEM Calculadora Automática</span>
-                  </li>
-                   <li className="flex items-start gap-3 bg-red-900/20 p-3 rounded-xl border border-red-900/30 mt-4">
-                    <AlertCircle className="w-5 h-5 text-red-400 shrink-0" />
-                    <span className="text-red-300 text-xs text-left font-bold">Atenção: Opção mais difícil para quem está começando do absoluto zero.</span>
+                    <span className="text-slate-400 text-sm line-through decoration-red-500/50 italic opacity-60">SEM Calculadora de Lucro Automática</span>
                   </li>
                 </ul>
 
@@ -360,13 +355,20 @@ const App: React.FC = () => {
                   className="w-full bg-transparent border-2 border-slate-600 hover:bg-slate-700 text-slate-400 font-bold py-4 rounded-xl transition-all text-sm group flex flex-col items-center justify-center cursor-pointer"
                 >
                   <span className="group-hover:text-slate-200 transition-colors uppercase font-black">Quero apenas o PDF</span>
-                  <span className="text-[10px] font-normal opacity-50 mt-1">(Opção de Entrada)</span>
                 </a>
-              </div>
             </div>
 
-            {/* Main Offer Card (Highlighted) - Arsenal Completo */}
-            <div className="order-1 md:order-2 bg-white rounded-[2.5rem] shadow-[0_0_80px_-15px_rgba(255,255,255,0.4)] overflow-hidden w-full max-w-lg relative transform md:-translate-y-8 border-4 border-amber-400 flex flex-col">
+            {/* MENSAGEM DE TRANSIÇÃO */}
+            <div className="text-center py-4 flex flex-col items-center gap-4">
+               <div className="h-px w-24 bg-slate-700"></div>
+               <p className="text-amber-400 font-black text-xl md:text-3xl uppercase italic tracking-tighter drop-shadow-lg animate-bounce px-4 leading-none">
+                  Calma aí... temos um plano mais completo logo abaixo! 👇
+               </p>
+               <div className="h-px w-24 bg-slate-700"></div>
+            </div>
+
+            {/* Arsenal Completo (R$ 19,90) - APARECE DEPOIS */}
+            <div className="bg-white rounded-[2.5rem] shadow-[0_0_80px_-15px_rgba(255,255,255,0.4)] overflow-hidden w-full relative border-4 border-amber-400 flex flex-col transform hover:-translate-y-2 transition-all duration-300">
               <div className="absolute top-0 inset-x-0 h-3 bg-gradient-to-r from-rose-500 via-amber-400 to-rose-500"></div>
               <div className="absolute top-4 right-0 bg-amber-400 text-slate-900 text-[10px] font-black px-6 py-2 rounded-l-full uppercase z-10 shadow-lg tracking-widest">
                 MAIS RECOMENDADO
@@ -374,7 +376,7 @@ const App: React.FC = () => {
               
               <div className="p-10 text-center bg-rose-50/50 pb-8">
                 <h3 className="text-4xl font-black text-rose-600 uppercase mb-2 tracking-tight leading-none">Arsenal Completo</h3>
-                <p className="text-slate-800 text-xs font-bold tracking-widest uppercase opacity-60">OFERTA COMPLETA DE ALUNA</p>
+                <p className="text-slate-800 text-xs font-bold tracking-widest uppercase opacity-60">VÍDEO AULAS + CALCULADORA + BÔNUS</p>
               </div>
 
               <div className="p-8 md:p-10 flex-1 flex flex-col">
@@ -390,22 +392,21 @@ const App: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="space-y-4 mb-10 flex-1">
-                  {/* Highlights Visuals */}
-                  <div className="grid grid-cols-2 gap-4 mb-6">
+                <div className="space-y-6 mb-10 flex-1">
+                  <div className="grid grid-cols-2 gap-4">
                     <div className="bg-green-50 p-4 rounded-2xl border border-green-100 flex flex-col items-center text-center gap-2 group hover:bg-green-100 transition-colors">
                       <Play className="w-8 h-8 text-green-600 fill-green-600/10" />
-                      <span className="text-xs font-bold text-slate-700 leading-tight">Portal de Vídeos <br/>Passo a Passo</span>
+                      <span className="text-xs font-bold text-slate-700 leading-tight">Vídeos em 4K <br/>Passo a Passo</span>
                     </div>
                     <div className="bg-green-50 p-4 rounded-2xl border border-green-100 flex flex-col items-center text-center gap-2 group hover:bg-green-100 transition-colors">
                       <Calculator className="w-8 h-8 text-green-600" />
-                      <span className="text-xs font-bold text-slate-700 leading-tight">Calculadora <br/>de Lucro Real</span>
+                      <span className="text-xs font-bold text-slate-700 leading-tight">Calculadora <br/>Automática</span>
                     </div>
                   </div>
 
                   <div className="space-y-4">
                     {[
-                      "+225 Recheios Sem Fogo (PDF incluso)",
+                      "+225 Recheios Sem Fogo (Completo)",
                       "28 Panetones e Chocotones Trufados",
                       "20 Copos da Felicidade Campeões",
                       "11 Bolos em Fatias (Slice Cake)",
@@ -426,7 +427,7 @@ const App: React.FC = () => {
 
                 <a 
                   href="https://pay.wiapy.com/yK-9w1OfhN"
-                  className="group w-full bg-gradient-to-b from-green-500 to-green-600 hover:from-green-400 hover:to-green-500 text-white font-black py-7 rounded-2xl shadow-[0_20px_40px_-10px_rgba(34,197,94,0.5)] transition-all mb-6 text-center flex flex-col items-center justify-center leading-none relative overflow-hidden transform hover:-translate-y-1 cursor-pointer"
+                  className="group w-full bg-gradient-to-b from-green-500 to-green-600 hover:from-green-400 hover:to-green-500 text-white font-black py-7 rounded-2xl shadow-[0_20px_40px_-10px_rgba(34,197,94,0.5)] transition-all mb-6 text-center flex flex-col items-center justify-center leading-none relative overflow-hidden transform hover:-translate-y-1 cursor-pointer border-none outline-none"
                 >
                   <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
                   <span className="relative z-10 text-2xl md:text-3xl uppercase tracking-tighter leading-none">QUERO O ARSENAL COMPLETO</span>
