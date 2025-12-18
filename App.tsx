@@ -58,16 +58,14 @@ const App: React.FC = () => {
           </p>
 
           <div className="pt-8 flex flex-col md:flex-row items-center justify-center gap-4">
-            <a 
-              href="https://pay.wiapy.com/yK-9w1OfhN"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group relative bg-green-500 hover:bg-green-600 text-white font-black text-xl md:text-2xl py-5 px-10 rounded-full shadow-[0_0_40px_-10px_rgba(34,197,94,0.6)] transition-all transform hover:-translate-y-1 hover:scale-105 active:scale-95 flex items-center gap-3 w-full md:w-auto justify-center overflow-hidden cursor-pointer"
+            <button 
+              onClick={scrollToPricing}
+              className="group relative bg-green-500 hover:bg-green-600 text-white font-black text-xl md:text-2xl py-5 px-10 rounded-full shadow-[0_0_40px_-10px_rgba(34,197,94,0.6)] transition-all transform hover:-translate-y-1 hover:scale-105 active:scale-95 flex items-center gap-3 w-full md:w-auto justify-center overflow-hidden cursor-pointer border-none outline-none"
             >
-              <span className="relative z-10">SIM! QUERO COMEÇAR AGORA</span>
+              <span className="relative z-10 uppercase">SIM! QUERO COMEÇAR AGORA</span>
               <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform relative z-10" />
               <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
-            </a>
+            </button>
             <p className="text-sm text-slate-400 md:hidden flex items-center gap-1">
               <Lock className="w-3 h-3" /> Compra segura e acesso imediato
             </p>
@@ -152,7 +150,6 @@ const App: React.FC = () => {
 
       {/* Netflix Style / Feature Highlight */}
       <section className="py-20 bg-slate-900 text-white relative overflow-hidden">
-        {/* Decorative Elements */}
         <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-rose-900/40 via-slate-900 to-slate-900 z-0"></div>
         
         <div className="max-w-7xl mx-auto px-4 flex flex-col-reverse md:flex-row items-center gap-12 relative z-10">
@@ -215,7 +212,7 @@ const App: React.FC = () => {
             <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-700 bg-black aspect-video w-full max-w-md">
                <iframe 
                  className="w-full h-full"
-                 src="https://www.youtube.com/embed/BJQD1VWY_CY?autoplay=0&controls=1&rel=0&loop=1" 
+                 src="https://www.youtube.com/embed/BJQD1VWY_CY?autoplay=0&controls=1&rel=0" 
                  title="Por dentro da plataforma" 
                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                  allowFullScreen
@@ -229,17 +226,17 @@ const App: React.FC = () => {
       <section className="py-24 px-4 bg-rose-50/30">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold text-slate-800 mb-4 tracking-tight">
+            <h2 className="text-3xl md:text-5xl font-bold text-slate-800 mb-4 tracking-tight uppercase">
               O QUE VOCÊ VAI RECEBER
             </h2>
-            <p className="text-xl text-slate-600">Um verdadeiro arsenal para dominar a confeitaria</p>
+            <p className="text-xl text-slate-600 italic">Um verdadeiro arsenal para dominar a confeitaria</p>
           </div>
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
              {[
                { title: "Slice Cake", subtitle: "Fatias Lucrativas", img: "https://images.unsplash.com/photo-1621303837174-89787a7d4729?q=80&w=600&auto=format&fit=crop" },
                { title: "Copo Felicidade", subtitle: "Campeão de Vendas", img: "https://images.unsplash.com/photo-1563805042-7684c019e1cb?q=80&w=600&auto=format&fit=crop" },
-               { title: "Sobremesas", subtitle: "Taças Gourmet", img: "https://images.unsplash.com/photo-1590080875515-8a3a8dc5735e?q=80&w=600&auto=format&fit=crop" },
+               { title: "Taças Gourmet", subtitle: "Sobremesas Premium", img: "https://images.unsplash.com/photo-1541783245831-57d6fb0926d3?q=80&w=600&auto=format&fit=crop" },
                { title: "Brigadeiros", subtitle: "O Clássico Perfeito", img: "https://images.unsplash.com/photo-1579372786545-d24232daf58c?q=80&w=600&auto=format&fit=crop" }
              ].map((item, idx) => (
                <div key={idx} className="group relative overflow-hidden rounded-2xl aspect-[4/5] shadow-lg cursor-pointer">
@@ -269,7 +266,7 @@ const App: React.FC = () => {
                     <div className="mt-1 bg-green-100 p-1 rounded-full">
                       <CheckCircle2 className="w-4 h-4 text-green-600" />
                     </div>
-                    <span className="text-slate-700 font-medium text-lg">{item}</span>
+                    <span className="text-slate-700 font-medium text-lg leading-snug">{item}</span>
                   </div>
                 ))}
              </div>
@@ -280,8 +277,8 @@ const App: React.FC = () => {
       {/* Testimonials */}
       <section className="py-20 px-4 bg-white relative">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-center text-3xl md:text-4xl font-bold mb-16 text-slate-900">
-            Quem Faz, Aprova e <span className="text-rose-600 underline decoration-wavy decoration-amber-400">Lucra!</span>
+          <h2 className="text-center text-3xl md:text-4xl font-bold mb-16 text-slate-900 tracking-tight">
+            Quem Faz, Aprova e <span className="text-rose-600 underline decoration-amber-400">Lucra!</span>
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
             {TESTIMONIALS.map((t, i) => (
@@ -289,9 +286,9 @@ const App: React.FC = () => {
                 <div className="absolute -top-4 right-8 bg-amber-400 text-white px-3 py-1 rounded-full text-xs font-bold shadow-sm flex items-center gap-1">
                    <Star className="w-3 h-3 fill-white" /> 5.0
                 </div>
-                <div className="flex gap-1 mb-6">
+                <div className="flex gap-1 mb-6 text-amber-400">
                   {[...Array(t.rating)].map((_, r) => (
-                    <Star key={r} className="w-5 h-5 text-amber-400 fill-amber-400" />
+                    <Star key={r} className="w-5 h-5 fill-current" />
                   ))}
                 </div>
                 <p className="text-slate-700 italic mb-8 leading-relaxed text-lg">"{t.content}"</p>
@@ -300,8 +297,8 @@ const App: React.FC = () => {
                     {t.name.charAt(0)}
                   </div>
                   <div>
-                    <p className="font-bold text-slate-900">{t.name}</p>
-                    <p className="text-xs text-rose-600 font-bold uppercase tracking-wide">{t.role}</p>
+                    <p className="font-bold text-slate-900 leading-none">{t.name}</p>
+                    <p className="text-xs text-rose-600 font-bold uppercase tracking-wide mt-1">{t.role}</p>
                   </div>
                 </div>
               </div>
@@ -317,70 +314,109 @@ const App: React.FC = () => {
 
         <div className="max-w-6xl mx-auto relative z-10">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">Escolha a Melhor Opção</h2>
+            <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 tracking-tight uppercase">Escolha a Melhor Opção</h2>
             <div className="inline-block bg-green-500/10 border border-green-500 text-green-400 px-6 py-2 rounded-full font-bold animate-pulse">
-              🎉 DESCONTO DE R$ 80,00 ATIVADO
+              🎉 DESCONTO ESPECIAL ATIVADO
             </div>
           </div>
 
           <div className="flex flex-col md:flex-row gap-8 items-stretch justify-center">
             
-            {/* Main Offer Card (Highlighted) */}
-            <div className="order-1 md:order-2 bg-white rounded-3xl shadow-[0_0_60px_-15px_rgba(255,255,255,0.3)] overflow-hidden w-full max-w-lg relative transform md:-translate-y-8 border-4 border-amber-400 flex flex-col">
-              <div className="absolute top-0 inset-x-0 h-2 bg-gradient-to-r from-rose-500 via-amber-500 to-rose-500"></div>
-              <div className="absolute top-4 right-0 bg-amber-400 text-slate-900 text-xs font-black px-4 py-1.5 rounded-l-full uppercase z-10 shadow-md">
-                Mais Vendido
+            {/* Downsell Card (Ghost) - PDF primeiro como opção de entrada */}
+            <div className="order-2 md:order-1 bg-slate-800/50 backdrop-blur-sm rounded-3xl w-full max-w-sm border border-slate-700 md:mt-12 flex flex-col h-fit opacity-80 hover:opacity-100 transition-opacity">
+              <div className="p-6 text-center border-b border-slate-700">
+                <h3 className="text-xl font-bold text-slate-300 uppercase tracking-widest leading-none">Pacote PDF</h3>
+                <p className="text-slate-500 text-[10px] font-bold tracking-widest mt-1 uppercase">(APENAS RECEITAS ESCRITAS)</p>
+              </div>
+              <div className="p-6">
+                <div className="text-center mb-6">
+                  <div className="flex items-center justify-center gap-1 text-slate-300">
+                    <span className="text-xl font-bold">R$</span>
+                    <span className="text-5xl font-black tracking-tighter leading-none">10,00</span>
+                  </div>
+                </div>
+
+                <ul className="space-y-4 mb-8">
+                  <li className="flex items-start gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-slate-500 shrink-0" />
+                    <span className="text-slate-400 text-sm text-left">Apenas Receitas escritas digitalmente</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <XCircle className="w-5 h-5 text-red-500 shrink-0" />
+                    <span className="text-slate-400 text-sm text-left line-through decoration-red-500/50 italic opacity-60">SEM as Vídeo Aulas 4K</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <XCircle className="w-5 h-5 text-red-500 shrink-0" />
+                    <span className="text-slate-400 text-sm text-left line-through decoration-red-500/50 italic opacity-60">SEM Calculadora Automática</span>
+                  </li>
+                   <li className="flex items-start gap-3 bg-red-900/20 p-3 rounded-xl border border-red-900/30 mt-4">
+                    <AlertCircle className="w-5 h-5 text-red-400 shrink-0" />
+                    <span className="text-red-300 text-xs text-left font-bold">Atenção: Opção mais difícil para quem está começando do absoluto zero.</span>
+                  </li>
+                </ul>
+
+                <a 
+                  href="https://pay.wiapy.com/vaHa9TGejO"
+                  className="w-full bg-transparent border-2 border-slate-600 hover:bg-slate-700 text-slate-400 font-bold py-4 rounded-xl transition-all text-sm group flex flex-col items-center justify-center cursor-pointer"
+                >
+                  <span className="group-hover:text-slate-200 transition-colors uppercase font-black">Quero apenas o PDF</span>
+                  <span className="text-[10px] font-normal opacity-50 mt-1">(Opção de Entrada)</span>
+                </a>
+              </div>
+            </div>
+
+            {/* Main Offer Card (Highlighted) - Arsenal Completo */}
+            <div className="order-1 md:order-2 bg-white rounded-[2.5rem] shadow-[0_0_80px_-15px_rgba(255,255,255,0.4)] overflow-hidden w-full max-w-lg relative transform md:-translate-y-8 border-4 border-amber-400 flex flex-col">
+              <div className="absolute top-0 inset-x-0 h-3 bg-gradient-to-r from-rose-500 via-amber-400 to-rose-500"></div>
+              <div className="absolute top-4 right-0 bg-amber-400 text-slate-900 text-[10px] font-black px-6 py-2 rounded-l-full uppercase z-10 shadow-lg tracking-widest">
+                MAIS RECOMENDADO
               </div>
               
-              <div className="p-8 text-center bg-rose-50/50 pb-6">
-                <h3 className="text-3xl font-black text-rose-600 uppercase mb-2 leading-none tracking-tight">Arsenal Completo</h3>
-                <p className="text-slate-800 text-sm font-bold tracking-widest uppercase mb-4 opacity-70">+ FERRAMENTAS PREMIUM</p>
-                <div className="flex flex-wrap justify-center gap-2">
-                   {['Slice Cake', 'Copo Felicidade', 'Sobremesas', 'Brigadeiros'].map((tag) => (
-                     <span key={tag} className="bg-white border border-rose-200 text-rose-700 text-[10px] md:text-xs font-bold px-3 py-1 rounded-full shadow-sm">
-                       {tag}
-                     </span>
-                   ))}
-                </div>
+              <div className="p-10 text-center bg-rose-50/50 pb-8">
+                <h3 className="text-4xl font-black text-rose-600 uppercase mb-2 tracking-tight leading-none">Arsenal Completo</h3>
+                <p className="text-slate-800 text-xs font-bold tracking-widest uppercase opacity-60">OFERTA COMPLETA DE ALUNA</p>
               </div>
 
-              <div className="p-6 md:p-8 flex-1 flex flex-col">
-                <div className="text-center mb-8 border-b border-slate-100 pb-6">
-                  <p className="text-slate-400 line-through text-lg font-medium">De R$ 99,90</p>
+              <div className="p-8 md:p-10 flex-1 flex flex-col">
+                <div className="text-center mb-10 border-b border-slate-100 pb-8">
+                  <p className="text-slate-400 line-through text-xl font-medium">De R$ 99,90</p>
                   <div className="flex items-center justify-center gap-1 text-slate-900 -mt-2">
-                    <span className="text-3xl font-bold align-top mt-2">R$</span>
-                    <span className="text-7xl font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-br from-slate-900 to-slate-700">19,90</span>
+                    <span className="text-4xl font-bold mt-4">R$</span>
+                    <span className="text-8xl font-black tracking-tighter leading-none">19,90</span>
                   </div>
-                  <p className="text-green-600 font-bold text-sm mt-2">Pagamento Único • Acesso Vitalício</p>
+                  <div className="mt-4 flex flex-wrap justify-center gap-2">
+                    <span className="bg-green-100 text-green-700 text-[10px] font-black px-3 py-1 rounded-md uppercase tracking-tighter">Pagamento Único</span>
+                    <span className="bg-rose-100 text-rose-700 text-[10px] font-black px-3 py-1 rounded-md uppercase tracking-tighter">Acesso Vitalício</span>
+                  </div>
                 </div>
 
-                <div className="space-y-4 mb-8 flex-1">
-                  {/* Highlights */}
-                  <div className="grid grid-cols-2 gap-3 mb-4">
-                    <div className="bg-green-50 p-3 rounded-xl border border-green-100 flex flex-col items-center text-center gap-2">
-                      <Play className="w-6 h-6 text-green-600" />
+                <div className="space-y-4 mb-10 flex-1">
+                  {/* Highlights Visuals */}
+                  <div className="grid grid-cols-2 gap-4 mb-6">
+                    <div className="bg-green-50 p-4 rounded-2xl border border-green-100 flex flex-col items-center text-center gap-2 group hover:bg-green-100 transition-colors">
+                      <Play className="w-8 h-8 text-green-600 fill-green-600/10" />
                       <span className="text-xs font-bold text-slate-700 leading-tight">Portal de Vídeos <br/>Passo a Passo</span>
                     </div>
-                    <div className="bg-green-50 p-3 rounded-xl border border-green-100 flex flex-col items-center text-center gap-2">
-                      <Calculator className="w-6 h-6 text-green-600" />
+                    <div className="bg-green-50 p-4 rounded-2xl border border-green-100 flex flex-col items-center text-center gap-2 group hover:bg-green-100 transition-colors">
+                      <Calculator className="w-8 h-8 text-green-600" />
                       <span className="text-xs font-bold text-slate-700 leading-tight">Calculadora <br/>de Lucro Real</span>
                     </div>
                   </div>
 
-                  <div className="space-y-3">
+                  <div className="space-y-4">
                     {[
-                      "+225 Recheios Sem Fogo (Sabores Premium)",
+                      "+225 Recheios Sem Fogo (PDF incluso)",
                       "28 Panetones e Chocotones Trufados",
                       "20 Copos da Felicidade Campeões",
                       "11 Bolos em Fatias (Slice Cake)",
-                      "32 Brigadeiros Gourmet",
-                      "09 Taças de Sobremesa"
+                      "32 Brigadeiros Gourmet Premium",
+                      "09 Taças de Sobremesa Exclusivas"
                     ].map((feat, i) => (
                       <div key={i} className="flex items-start gap-3">
-                        <div className="mt-0.5 bg-rose-100 rounded-full p-0.5">
-                          <CheckCircle2 className="w-4 h-4 text-rose-600 shrink-0" />
+                        <div className="mt-1 bg-green-100 rounded-full p-0.5 shadow-sm">
+                          <CheckCircle2 className="w-4 h-4 text-green-600 shrink-0" />
                         </div>
-                        <span className="text-slate-700 text-sm font-medium text-left">
+                        <span className="text-slate-700 text-base font-bold text-left leading-tight">
                           {feat}
                         </span>
                       </div>
@@ -390,68 +426,17 @@ const App: React.FC = () => {
 
                 <a 
                   href="https://pay.wiapy.com/yK-9w1OfhN"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group w-full bg-gradient-to-b from-green-500 to-green-600 hover:from-green-400 hover:to-green-500 text-white font-bold py-5 px-6 rounded-2xl shadow-xl shadow-green-900/20 hover:shadow-2xl hover:shadow-green-500/40 transition-all mb-4 text-lg flex flex-col items-center leading-tight relative overflow-hidden transform hover:-translate-y-1 cursor-pointer"
+                  className="group w-full bg-gradient-to-b from-green-500 to-green-600 hover:from-green-400 hover:to-green-500 text-white font-black py-7 rounded-2xl shadow-[0_20px_40px_-10px_rgba(34,197,94,0.5)] transition-all mb-6 text-center flex flex-col items-center justify-center leading-none relative overflow-hidden transform hover:-translate-y-1 cursor-pointer"
                 >
                   <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
-                  <span className="relative z-10 text-xl md:text-2xl uppercase tracking-wide">SIM! QUERO TUDO ISSO</span>
-                  <span className="relative z-10 text-sm font-medium opacity-90 mt-1">POR APENAS R$ 19,90</span>
+                  <span className="relative z-10 text-2xl md:text-3xl uppercase tracking-tighter leading-none">QUERO O ARSENAL COMPLETO</span>
+                  <span className="relative z-10 text-sm font-bold opacity-90 mt-2 uppercase tracking-widest italic">Acesso Imediato • R$ 19,90</span>
                 </a>
                 
-                <div className="flex items-center justify-center gap-2 text-xs text-slate-400 bg-slate-50 py-2 rounded-lg">
-                  <Lock className="w-3 h-3" />
-                  <span>Ambiente Criptografado e 100% Seguro</span>
+                <div className="flex items-center justify-center gap-2 text-[10px] text-slate-400 font-bold uppercase tracking-widest">
+                  <ShieldCheck className="w-4 h-4 text-green-500" />
+                  <span>Ambiente Blindado e 100% Seguro</span>
                 </div>
-              </div>
-            </div>
-
-            {/* Downsell Card (Ghost) */}
-            <div className="order-2 md:order-1 bg-slate-800/50 backdrop-blur-sm rounded-3xl w-full max-w-sm border border-slate-700 md:mt-12 flex flex-col h-fit opacity-80 hover:opacity-100 transition-opacity">
-              <div className="p-6 text-center border-b border-slate-700">
-                <h3 className="text-xl font-bold text-slate-300 uppercase">Pacote Leitura</h3>
-                <p className="text-slate-500 text-[10px] font-bold tracking-widest mt-1 uppercase">(APENAS PDF - SEM VÍDEOS)</p>
-              </div>
-              <div className="p-6">
-                <div className="text-center mb-6">
-                  <div className="flex items-center justify-center gap-1 text-slate-300">
-                    <span className="text-xl font-bold">R$</span>
-                    <span className="text-5xl font-black tracking-tighter">10,00</span>
-                  </div>
-                </div>
-
-                <ul className="space-y-4 mb-8">
-                  <li className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-slate-500 shrink-0" />
-                    <span className="text-slate-400 text-sm text-left">Apenas Receitas escritas</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <XCircle className="w-5 h-5 text-red-500 shrink-0" />
-                    <span className="text-slate-400 text-sm text-left line-through decoration-red-500/50">SEM as Vídeo Aulas</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <XCircle className="w-5 h-5 text-red-500 shrink-0" />
-                    <span className="text-slate-400 text-sm text-left line-through decoration-red-500/50">SEM Calculadora Automática</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <XCircle className="w-5 h-5 text-red-500 shrink-0" />
-                    <span className="text-slate-400 text-sm text-left line-through decoration-red-500/50">SEM Atualizações</span>
-                  </li>
-                   <li className="flex items-start gap-3 bg-red-900/20 p-2 rounded border border-red-900/30">
-                    <AlertCircle className="w-5 h-5 text-red-400 shrink-0" />
-                    <span className="text-red-300 text-xs text-left font-bold">Risco maior de errar o ponto da receita sem ver o vídeo</span>
-                  </li>
-                </ul>
-
-                <a 
-                  href="https://pay.wiapy.com/vaHa9TGejO"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full bg-transparent border-2 border-slate-600 hover:bg-slate-700 text-slate-400 font-bold py-3 rounded-xl transition-all text-sm group flex flex-col items-center justify-center cursor-pointer"
-                >
-                  <span className="group-hover:text-slate-200 transition-colors">Quero apenas ler os arquivos</span>
-                  <span className="text-[10px] font-normal opacity-50">(Opção Básica)</span>
-                </a>
               </div>
             </div>
 
@@ -459,57 +444,57 @@ const App: React.FC = () => {
         </div>
       </section>
 
-      {/* Guarantee - REDESIGNED */}
-      <section className="bg-white py-12 border-b border-slate-100">
-        <div className="max-w-4xl mx-auto px-4 flex flex-col md:flex-row items-center gap-8">
-          
-          {/* New Golden Seal */}
-          <div className="relative w-32 h-32 flex-shrink-0">
-             <div className="absolute inset-0 bg-amber-400 blur-xl opacity-40 rounded-full animate-pulse"></div>
-             <div className="relative w-full h-full bg-gradient-to-br from-amber-100 via-amber-300 to-amber-500 rounded-full p-1 shadow-2xl">
-                <div className="w-full h-full bg-white rounded-full border-[6px] border-amber-400 border-double flex flex-col items-center justify-center p-2 text-center">
-                   <ShieldCheck className="w-8 h-8 text-amber-500 mb-1" />
-                   <span className="text-amber-600 font-black text-3xl leading-none">7</span>
-                   <span className="text-[10px] uppercase font-bold text-amber-600 tracking-wider">Dias de<br/>Garantia</span>
+      {/* Guarantee Section */}
+      <section className="bg-white py-20 px-4 border-b border-slate-100">
+        <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-10">
+          <div className="relative w-40 h-40 flex-shrink-0">
+             <div className="absolute inset-0 bg-amber-400 blur-2xl opacity-30 rounded-full animate-pulse"></div>
+             <div className="relative w-full h-full bg-gradient-to-br from-amber-200 via-amber-400 to-amber-600 rounded-full p-1 shadow-2xl">
+                <div className="w-full h-full bg-white rounded-full border-[8px] border-amber-400 border-double flex flex-col items-center justify-center p-2 text-center">
+                   <ShieldCheck className="w-10 h-10 text-amber-500 mb-1" />
+                   <span className="text-amber-600 font-black text-4xl leading-none">7</span>
+                   <span className="text-[10px] uppercase font-bold text-amber-600 tracking-widest mt-1">Dias de<br/>Garantia</span>
                 </div>
              </div>
           </div>
 
           <div className="text-center md:text-left space-y-4">
-             <h3 className="text-2xl font-bold text-slate-900">Risco Zero para Você</h3>
-             <p className="text-slate-600">
-               Nós confiamos tanto no método Arsenal da Confeitaria que, se em 7 dias você achar que não valeu a pena, nós devolvemos 100% do seu dinheiro. Sem perguntas, sem letras miúdas. Basta um e-mail.
+             <h3 className="text-3xl font-black text-slate-900 uppercase tracking-tight leading-none">Sua Satisfação ou seu Dinheiro de Volta</h3>
+             <p className="text-slate-600 text-lg leading-relaxed">
+               Acreditamos tanto no potencial do **Arsenal da Confeitaria** que oferecemos uma garantia incondicional de 7 dias. Se você não amar as receitas ou as aulas, basta nos enviar um e-mail e devolvemos cada centavo. Sem letras miúdas.
              </p>
           </div>
         </div>
       </section>
 
-      {/* FAQ */}
-      <section className="py-20 px-4 bg-slate-50">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-center text-3xl font-bold mb-2 text-slate-900">Perguntas Frequentes</h2>
-          <p className="text-center text-slate-500 mb-10">Tire suas dúvidas antes de começar</p>
+      {/* FAQ Section */}
+      <section className="py-24 px-4 bg-slate-50">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-center text-3xl md:text-5xl font-extrabold mb-4 text-slate-900 tracking-tight leading-tight">Dúvidas Frequentes</h2>
+          <p className="text-center text-slate-500 mb-16 text-lg">Tudo o que você precisa saber antes de entrar</p>
           <Accordion items={FAQS} />
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-slate-900 text-slate-400 py-12 px-4 border-t border-slate-800 text-center text-sm">
-         <div className="max-w-4xl mx-auto space-y-6">
-           <div>
-             <span className="text-white font-bold text-xl tracking-tight">Arsenal da Confeitaria</span>
+      <footer className="bg-slate-900 text-slate-400 py-20 px-4 border-t border-slate-800 text-center">
+         <div className="max-w-5xl mx-auto space-y-10">
+           <div className="flex flex-col items-center gap-6">
+              <span className="text-white font-black text-3xl tracking-tighter uppercase italic">Arsenal da Confeitaria</span>
+              <div className="flex flex-wrap justify-center gap-8 text-xs md:text-sm font-bold uppercase tracking-widest opacity-60">
+                <a href="#" className="hover:text-white transition-colors underline decoration-slate-700 underline-offset-4">Termos de Uso</a>
+                <a href="#" className="hover:text-white transition-colors underline decoration-slate-700 underline-offset-4">Privacidade</a>
+                <a href="#" className="hover:text-white transition-colors underline decoration-slate-700 underline-offset-4">Contato</a>
+              </div>
            </div>
-           <p className="text-slate-500">
-             &copy; 2025 Todos os direitos reservados.
+           
+           <div className="h-px w-full bg-slate-800/50"></div>
+
+           <p className="text-[10px] text-slate-600 max-w-2xl mx-auto leading-relaxed uppercase tracking-wide">
+             Este site não é afiliado ao Facebook nem ao Google. Todos os esforços foram feitos para apresentar o produto de forma clara e honesta. Os resultados podem variar de pessoa para pessoa dependendo da aplicação do método.
            </p>
-           <div className="flex justify-center gap-6 text-xs md:text-sm">
-             <a href="#" className="hover:text-white transition-colors underline decoration-slate-700 underline-offset-4">Termos de Uso</a>
-             <a href="#" className="hover:text-white transition-colors underline decoration-slate-700 underline-offset-4">Política de Privacidade</a>
-             <a href="#" className="hover:text-white transition-colors underline decoration-slate-700 underline-offset-4">Contato</a>
-           </div>
-           <p className="text-[10px] text-slate-600 max-w-lg mx-auto mt-8 leading-relaxed">
-             Este site não é afiliado ao Facebook ou a qualquer entidade do Facebook. Depois que você sair do Facebook, a responsabilidade não é deles e sim do nosso site. Fazemos todos os esforços para indicar claramente e mostrar todas as provas do produto e usar resultados reais.
-           </p>
+           
+           <p className="font-bold text-xs uppercase tracking-[0.2em] opacity-30">&copy; 2025 • Todos os direitos reservados.</p>
          </div>
       </footer>
     </div>
