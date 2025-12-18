@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Arsenal da Confeitaria - Renda Extra e Hobby Lucrativo</title>
     
-    <!-- Facebook Pixel Code -->
+    <!-- Facebook Pixel Code (Script) -->
     <script>
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -18,10 +18,7 @@
     fbq('init', '1940046970255243');
     fbq('track', 'PageView');
     </script>
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=1940046970255243&ev=PageView&noscript=1"
-    /></noscript>
-    <!-- End Facebook Pixel Code -->
+    <!-- End Facebook Pixel Code (Script) -->
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
@@ -64,6 +61,11 @@
 </script>
 </head>
   <body>
+    <!-- Facebook Pixel Code (Noscript) - Moved to body to fix build error -->
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1940046970255243&ev=PageView&noscript=1"
+    /></noscript>
+    
     <div id="root"></div>
     <script type="module" src="/index.tsx"></script>
   </body>
