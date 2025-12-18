@@ -71,20 +71,36 @@ const App: React.FC = () => {
         </div>
       </header>
 
-      {/* Seção do Arsenal de Conteúdo */}
+      {/* Trust Bar */}
+      <div className="bg-white shadow-sm py-6 border-b border-slate-100 -mt-8 relative z-20 mx-4 md:mx-auto max-w-6xl rounded-xl">
+        <div className="flex flex-wrap justify-center items-center gap-6 md:gap-12 px-4 text-slate-500 font-medium text-sm md:text-base">
+          <div className="flex items-center gap-2">
+            <CheckCircle2 className="text-green-500 w-5 h-5" /> +5.000 Alunas
+          </div>
+          <div className="flex items-center gap-2">
+            <CheckCircle2 className="text-green-500 w-5 h-5" /> Satisfação Garantida
+          </div>
+          <div className="flex items-center gap-2">
+            <CheckCircle2 className="text-green-500 w-5 h-5" /> Acesso Vitalício
+          </div>
+        </div>
+      </div>
+
+      {/* Deliverables Section */}
       <section className="py-24 px-4 bg-rose-50/30">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold text-slate-800 mb-4 tracking-tight text-center uppercase">
               O QUE VOCÊ VAI RECEBER
             </h2>
+            <p className="text-xl text-slate-600">Um verdadeiro arsenal para dominar a confeitaria</p>
           </div>
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
              {[
                { title: "Slice Cake", subtitle: "Fatias Lucrativas", img: "https://images.unsplash.com/photo-1621303837174-89787a7d4729?q=80&w=600&auto=format&fit=crop" },
                { title: "Copo Felicidade", subtitle: "Campeão de Vendas", img: "https://images.unsplash.com/photo-1563805042-7684c019e1cb?q=80&w=600&auto=format&fit=crop" },
-               { title: "Taças Gourmet", subtitle: "Sobremesas Irresistíveis", img: "https://images.unsplash.com/photo-1551024506-0bccd828d307?q=80&w=600&auto=format&fit=crop" },
+               { title: "Taças Gourmet", subtitle: "Sobremesas Irresistíveis", img: "https://images.unsplash.com/photo-1541783245831-57d6fb0926d3?q=80&w=600&auto=format&fit=crop" },
                { title: "Brigadeiros", subtitle: "O Clássico Perfeito", img: "https://images.unsplash.com/photo-1579372786545-d24232daf58c?q=80&w=600&auto=format&fit=crop" }
              ].map((item, idx) => (
                <div key={idx} className="group relative overflow-hidden rounded-2xl aspect-[4/5] shadow-lg">
@@ -101,14 +117,19 @@ const App: React.FC = () => {
 
       {/* Pricing Section */}
       <section id="pricing" className="py-20 px-4 bg-slate-900 relative overflow-hidden">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-[radial-gradient(circle,_var(--tw-gradient-stops))] from-rose-900/20 via-slate-900 to-slate-900 pointer-events-none"></div>
+
         <div className="max-w-6xl mx-auto relative z-10">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">Escolha a Melhor Opção</h2>
+            <div className="inline-block bg-green-500/10 border border-green-500 text-green-400 px-6 py-2 rounded-full font-bold animate-pulse">
+              🎉 DESCONTO ATIVADO POR TEMPO LIMITADO
+            </div>
           </div>
 
           <div className="flex flex-col gap-12 items-center justify-center max-w-2xl mx-auto">
             
-            {/* PLANO DE 10 REAIS PRIMEIRO */}
+            {/* PLANO DE 10 REAIS (DOWNSELL) PRIMEIRO */}
             <div className="bg-slate-800/50 backdrop-blur-sm rounded-3xl w-full border border-slate-700 flex flex-col h-fit transition-opacity">
               <div className="p-6 text-center border-b border-slate-700">
                 <h3 className="text-xl font-bold text-slate-300 uppercase">Pacote Leitura</h3>
@@ -129,15 +150,15 @@ const App: React.FC = () => {
                   </li>
                   <li className="flex items-start gap-3">
                     <XCircle className="w-5 h-5 text-red-500 shrink-0" />
-                    <span className="text-slate-400 text-sm line-through">SEM as Vídeo Aulas</span>
+                    <span className="text-slate-400 text-sm line-through decoration-red-500/50">SEM as Vídeo Aulas</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <XCircle className="w-5 h-5 text-red-500 shrink-0" />
-                    <span className="text-slate-400 text-sm line-through">SEM Calculadora Automática</span>
+                    <span className="text-slate-400 text-sm line-through decoration-red-500/50">SEM Calculadora Automática</span>
                   </li>
                    <li className="flex items-start gap-3 bg-red-900/20 p-2 rounded border border-red-900/30">
                     <AlertCircle className="w-5 h-5 text-red-400 shrink-0" />
-                    <span className="text-red-300 text-xs font-bold">Risco maior de errar o ponto sem ver o vídeo</span>
+                    <span className="text-red-300 text-xs font-bold text-left">Risco maior de errar o ponto da receita sem ver o vídeo</span>
                   </li>
                 </ul>
 
@@ -147,30 +168,31 @@ const App: React.FC = () => {
                   rel="noopener noreferrer"
                   className="w-full bg-transparent border-2 border-slate-600 hover:bg-slate-700 text-slate-400 font-bold py-4 rounded-xl transition-all text-sm group flex flex-col items-center justify-center cursor-pointer"
                 >
-                  <span>Quero apenas ler os arquivos</span>
+                  <span className="group-hover:text-slate-200 transition-colors">Quero apenas ler os arquivos</span>
                   <span className="text-[10px] font-normal opacity-50">(Opção Básica)</span>
                 </a>
               </div>
             </div>
 
-            {/* AVISO DE TRANSIÇÃO */}
+            {/* AVISO DE TRANSIÇÃO SOLICITADO */}
             <div className="text-center py-4 flex flex-col items-center gap-4">
                <div className="h-px w-24 bg-slate-700"></div>
-               <p className="text-amber-400 font-black text-xl md:text-2xl uppercase italic tracking-tighter animate-bounce">
+               <p className="text-amber-400 font-black text-xl md:text-2xl uppercase italic tracking-tighter drop-shadow-md animate-bounce px-4">
                   Mas calma aí... abaixo temos uma oferta melhor ainda! 👇
                </p>
                <div className="h-px w-24 bg-slate-700"></div>
             </div>
 
-            {/* PLANO COMPLETO DEPOIS */}
-            <div className="bg-white rounded-3xl shadow-2xl overflow-hidden w-full relative border-4 border-amber-400 flex flex-col transform hover:-translate-y-2 transition-all duration-300">
-              <div className="absolute top-4 right-0 bg-amber-400 text-slate-900 text-xs font-black px-4 py-1.5 rounded-l-full uppercase z-10">
+            {/* PLANO COMPLETO (OFFER) DEPOIS */}
+            <div className="bg-white rounded-3xl shadow-[0_0_60px_-15px_rgba(255,255,255,0.3)] overflow-hidden w-full relative border-4 border-amber-400 flex flex-col transform hover:-translate-y-2 transition-all duration-300">
+              <div className="absolute top-0 inset-x-0 h-2 bg-gradient-to-r from-rose-500 via-amber-500 to-rose-500"></div>
+              <div className="absolute top-4 right-0 bg-amber-400 text-slate-900 text-xs font-black px-4 py-1.5 rounded-l-full uppercase z-10 shadow-md">
                 MAIS VANTAJOSO
               </div>
               
               <div className="p-8 text-center bg-rose-50/50 pb-6">
-                <h3 className="text-3xl font-black text-rose-600 uppercase mb-2">Arsenal Completo</h3>
-                <p className="text-slate-800 text-sm font-bold tracking-widest uppercase opacity-70">+ FERRAMENTAS PREMIUM</p>
+                <h3 className="text-3xl font-black text-rose-600 uppercase mb-2 leading-none tracking-tight">Arsenal Completo</h3>
+                <p className="text-slate-800 text-sm font-bold tracking-widest uppercase mb-4 opacity-70">+ FERRAMENTAS PREMIUM</p>
               </div>
 
               <div className="p-6 md:p-10 flex-1 flex flex-col">
@@ -180,9 +202,10 @@ const App: React.FC = () => {
                     <span className="text-3xl font-bold align-top mt-2">R$</span>
                     <span className="text-7xl font-black tracking-tighter">19,90</span>
                   </div>
+                  <p className="text-green-600 font-bold text-sm mt-2">Pagamento Único • Acesso Vitalício</p>
                 </div>
 
-                <div className="space-y-4 mb-8">
+                <div className="space-y-4 mb-8 flex-1">
                     {[
                       "Acesso ao Portal de Vídeo Aulas 4K",
                       "+225 Recheios Sem Fogo (Sabores Premium)",
@@ -194,8 +217,10 @@ const App: React.FC = () => {
                       "09 Taças de Sobremesa Gourmet"
                     ].map((feat, i) => (
                       <div key={i} className="flex items-start gap-3">
-                        <CheckCircle2 className="w-5 h-5 text-green-600 shrink-0" />
-                        <span className="text-slate-700 text-base font-semibold">{feat}</span>
+                        <div className="mt-0.5 bg-rose-100 rounded-full p-0.5">
+                          <CheckCircle2 className="w-4 h-4 text-rose-600 shrink-0" />
+                        </div>
+                        <span className="text-slate-700 text-base font-semibold text-left">{feat}</span>
                       </div>
                     ))}
                 </div>
@@ -204,11 +229,17 @@ const App: React.FC = () => {
                   href="https://pay.wiapy.com/yK-9w1OfhN"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group w-full bg-gradient-to-b from-green-500 to-green-600 hover:from-green-400 hover:to-green-500 text-white font-bold py-6 px-6 rounded-2xl shadow-xl transition-all mb-4 text-center flex flex-col items-center cursor-pointer"
+                  className="group w-full bg-gradient-to-b from-green-500 to-green-600 hover:from-green-400 hover:to-green-500 text-white font-bold py-6 px-6 rounded-2xl shadow-xl hover:shadow-2xl hover:shadow-green-500/40 transition-all mb-4 text-center flex flex-col items-center leading-tight relative overflow-hidden transform hover:-translate-y-1 cursor-pointer"
                 >
-                  <span className="text-xl md:text-2xl uppercase">SIM! QUERO TUDO ISSO</span>
-                  <span className="text-sm font-medium opacity-90">OFERTA COMPLETA POR APENAS R$ 19,90</span>
+                  <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+                  <span className="relative z-10 text-xl md:text-2xl uppercase tracking-wide">SIM! QUERO TUDO ISSO</span>
+                  <span className="relative z-10 text-sm font-medium opacity-90 mt-1">POR APENAS R$ 19,90 (OFERTA COMPLETA)</span>
                 </a>
+                
+                <div className="flex items-center justify-center gap-2 text-xs text-slate-400 bg-slate-50 py-3 rounded-lg">
+                  <Lock className="w-3 h-3" />
+                  <span>Ambiente Criptografado e 100% Seguro</span>
+                </div>
               </div>
             </div>
 
@@ -216,6 +247,29 @@ const App: React.FC = () => {
         </div>
       </section>
 
+      {/* Guarantee Section */}
+      <section className="bg-white py-12 border-b border-slate-100">
+        <div className="max-w-4xl mx-auto px-4 flex flex-col md:flex-row items-center gap-8">
+          <div className="relative w-32 h-32 flex-shrink-0">
+             <div className="absolute inset-0 bg-amber-400 blur-xl opacity-40 rounded-full animate-pulse"></div>
+             <div className="relative w-full h-full bg-gradient-to-br from-amber-100 via-amber-300 to-amber-500 rounded-full p-1 shadow-2xl">
+                <div className="w-full h-full bg-white rounded-full border-[6px] border-amber-400 border-double flex flex-col items-center justify-center p-2 text-center">
+                   <ShieldCheck className="w-8 h-8 text-amber-500 mb-1" />
+                   <span className="text-amber-600 font-black text-3xl leading-none">7</span>
+                   <span className="text-[10px] uppercase font-bold text-amber-600 tracking-wider">Dias de<br/>Garantia</span>
+                </div>
+             </div>
+          </div>
+          <div className="text-center md:text-left space-y-4">
+             <h3 className="text-2xl font-bold text-slate-900">Risco Zero para Você</h3>
+             <p className="text-slate-600">
+               Nós confiamos tanto no método que, se em 7 dias você achar que não valeu a pena, nós devolvemos 100% do seu dinheiro. Sem perguntas.
+             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
       <footer className="bg-slate-900 text-slate-400 py-12 px-4 text-center text-sm">
          <div className="max-w-4xl mx-auto space-y-6">
            <span className="text-white font-bold text-xl">Arsenal da Confeitaria</span>
