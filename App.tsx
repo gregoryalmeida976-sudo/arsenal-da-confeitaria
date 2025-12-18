@@ -15,7 +15,9 @@ import {
   ShieldCheck,
   Sparkles,
   Zap,
-  Award
+  Award,
+  ChevronDown,
+  ChevronsDown
 } from 'lucide-react';
 import { Timer } from './components/Timer';
 import { Accordion } from './components/Accordion';
@@ -162,10 +164,36 @@ const App: React.FC = () => {
               </div>
             </div>
           </div>
-          <div className="md:w-1/2 w-full flex flex-col items-center">
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-700 bg-black aspect-video w-full">
+          <div className="md:w-1/2 w-full flex flex-col items-center gap-8">
+            {/* ULTRA VISIBLE CTA above video */}
+            <div className="w-full flex flex-col items-center gap-4">
+              <div className="relative">
+                {/* Outer Ping Effect */}
+                <div className="absolute inset-0 bg-amber-400 rounded-2xl animate-ping opacity-20"></div>
+                
+                <div className="relative bg-amber-400 text-slate-900 px-8 py-4 rounded-2xl shadow-[0_10px_40px_-10px_rgba(251,191,36,0.5)] border-2 border-amber-300 flex flex-col items-center gap-2 transition-transform hover:scale-105">
+                  <div className="flex items-center gap-3">
+                    <span className="flex h-3 w-3 relative">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-600 opacity-75"></span>
+                      <span className="relative inline-flex rounded-full h-3 w-3 bg-red-600"></span>
+                    </span>
+                    <span className="text-lg md:text-xl font-black uppercase tracking-tighter leading-none italic">ASSISTA AO VÍDEO ABAIXO</span>
+                  </div>
+                  <p className="text-[10px] md:text-xs font-bold uppercase tracking-widest opacity-80 text-center">
+                    Veja por dentro e tudo o que você irá receber
+                  </p>
+                </div>
+              </div>
+              
+              <div className="flex flex-col items-center -mt-2">
+                <ChevronsDown className="w-8 h-8 text-amber-500 animate-bounce" />
+              </div>
+            </div>
+
+            <div className="relative rounded-3xl overflow-hidden shadow-[0_0_50px_-12px_rgba(0,0,0,0.5)] border-4 border-slate-800 bg-black aspect-video w-full group">
+               <div className="absolute inset-0 z-10 pointer-events-none border-2 border-white/5 rounded-[2rem]"></div>
                <iframe 
-                 className="w-full h-full"
+                 className="w-full h-full relative z-0"
                  src="https://www.youtube.com/embed/BJQD1VWY_CY?rel=0" 
                  title="Por dentro da plataforma" 
                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
@@ -182,7 +210,7 @@ const App: React.FC = () => {
 
         <div className="max-w-4xl mx-auto relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 uppercase">Escolha o seu Plano</h2>
+            <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 uppercase text-center w-full">Escolha o seu Plano</h2>
             <div className="inline-block bg-green-500/10 border border-green-500 text-green-400 px-6 py-2 rounded-full font-bold">
               OFERTA EXCLUSIVA ATIVADA
             </div>
@@ -228,8 +256,8 @@ const App: React.FC = () => {
             {/* TRANSITION MESSAGE - Cleaner spacing and lower priority animation */}
             <div className="text-center py-10 flex flex-col items-center gap-6 w-full max-w-xl">
                <div className="h-px w-full bg-slate-800"></div>
-               <p className="text-amber-400 font-black text-xl md:text-3xl uppercase italic tracking-tighter px-4 leading-tight flex flex-col items-center gap-3">
-                  <span className="flex items-center gap-2">
+               <p className="text-amber-400 font-black text-xl md:text-3xl uppercase italic tracking-tighter px-4 leading-tight flex flex-col items-center gap-3 text-center">
+                  <span className="flex items-center gap-2 justify-center">
                     <AlertCircle className="w-6 h-6 md:w-8 md:h-8" />
                     ATENÇÃO!
                   </span>
@@ -253,7 +281,7 @@ const App: React.FC = () => {
               </div>
               
               <div className="px-10 text-center pb-6">
-                <h3 className="text-4xl font-black text-rose-600 uppercase mb-1 italic tracking-tight">Arsenal Completo</h3>
+                <h3 className="text-4xl font-black text-rose-600 uppercase mb-1 italic tracking-tight text-center">Arsenal Completo</h3>
                 <div className="flex items-center justify-center gap-2 text-slate-900 font-bold text-xs uppercase opacity-80">
                    <Zap className="w-4 h-4 fill-amber-400 text-amber-400" /> TUDO LIBERADO <Zap className="w-4 h-4 fill-amber-400 text-amber-400" />
                 </div>
@@ -261,7 +289,7 @@ const App: React.FC = () => {
 
               <div className="p-8 md:p-10 pt-0 flex flex-col">
                 <div className="text-center mb-8 border-b border-slate-100 pb-8">
-                  <p className="text-slate-400 line-through text-lg">De R$ 147,00</p>
+                  <p className="text-slate-400 line-through text-lg text-center">De R$ 147,00</p>
                   <div className="flex items-center justify-center gap-1 text-slate-900 -mt-2">
                     <span className="text-4xl font-bold mt-4">R$</span>
                     <span className="text-8xl font-black tracking-tighter leading-none text-rose-600">19,90</span>
@@ -345,19 +373,19 @@ const App: React.FC = () => {
                   </div>
                </div>
 
-               <div className="flex-1 space-y-6 text-center md:text-left">
+               <div className="flex-1 space-y-6 text-center md:text-left text-center">
                   <div className="inline-flex items-center gap-2 bg-amber-50 text-amber-700 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest border border-amber-200">
                     <ShieldCheck className="w-4 h-4" /> Compromisso de Ouro
                   </div>
-                  <h3 className="text-3xl md:text-5xl font-black text-slate-900 uppercase tracking-tighter leading-none italic">
+                  <h3 className="text-3xl md:text-5xl font-black text-slate-900 uppercase tracking-tighter leading-none italic text-center">
                     Garantia Incondicional <span className="text-amber-500">Premium</span>
                   </h3>
-                  <p className="text-slate-600 leading-relaxed text-lg font-medium italic">
+                  <p className="text-slate-600 leading-relaxed text-lg font-medium italic text-center">
                     "Temos tanta confiança na qualidade do nosso conteúdo que assumimos todo o risco por você. Se por qualquer motivo você achar que o <span className="text-rose-600 font-bold">Arsenal da Confeitaria</span> não superou suas expectativas, devolvemos 100% do seu dinheiro. Simples assim."
                   </p>
-                  <div className="flex items-center justify-center md:justify-start gap-4">
+                  <div className="flex items-center justify-center md:justify-start gap-4 justify-center">
                      <div className="h-0.5 w-12 bg-amber-400 rounded-full"></div>
-                     <span className="text-amber-600 font-black uppercase text-xs tracking-[0.2em]">Sua evolução garantida</span>
+                     <span className="text-amber-600 font-black uppercase text-xs tracking-[0.2em] text-center">Sua evolução garantida</span>
                   </div>
                </div>
             </div>
@@ -367,7 +395,7 @@ const App: React.FC = () => {
             {TESTIMONIALS.map((t, i) => (
               <div key={i} className="bg-white p-8 rounded-3xl border border-slate-100 shadow-[0_15px_35px_-15px_rgba(0,0,0,0.08)] hover:shadow-2xl transition-all duration-500 relative group">
                 <div className="flex gap-1 mb-6 text-amber-400">
-                  {[...Array(5)].map((_, r) => <Star key={r} className="w-5 h-5 fill-current group-hover:scale-110 transition-transform" />)}
+                  {[...Array(5)].map((_, r) => <Star key={r} className="w-5 h-5 fill-current group-hover:scale-110 transition-transform duration-300" />)}
                 </div>
                 <p className="text-slate-700 italic mb-8 leading-relaxed">"{t.content}"</p>
                 <div className="flex items-center gap-4 pt-6 border-t border-slate-50">
@@ -388,7 +416,7 @@ const App: React.FC = () => {
       {/* FAQ */}
       <section className="py-20 bg-slate-50 px-4">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-center text-3xl font-bold mb-12 text-slate-900 uppercase tracking-[0.2em]">Perguntas Frequentes</h2>
+          <h2 className="text-center text-3xl font-bold mb-12 text-slate-900 uppercase tracking-[0.2em] text-center w-full">Perguntas Frequentes</h2>
           <Accordion items={FAQS} />
         </div>
       </section>
@@ -396,14 +424,14 @@ const App: React.FC = () => {
       {/* Footer */}
       <footer className="bg-slate-900 text-slate-500 py-24 px-4 text-center">
          <div className="max-w-5xl mx-auto space-y-10">
-           <span className="text-white font-black text-3xl tracking-tighter uppercase italic opacity-90">Arsenal da Confeitaria</span>
-           <div className="flex justify-center flex-wrap gap-8 text-[11px] font-black uppercase tracking-[0.3em] opacity-40">
+           <span className="text-white font-black text-3xl tracking-tighter uppercase italic opacity-90 block text-center w-full">Arsenal da Confeitaria</span>
+           <div className="flex justify-center flex-wrap gap-8 text-[11px] font-black uppercase tracking-[0.3em] opacity-40 justify-center">
              <a href="#" className="hover:text-amber-400 transition-colors">Termos de Uso</a>
              <a href="#" className="hover:text-amber-400 transition-colors">Políticas de Privacidade</a>
              <a href="#" className="hover:text-amber-400 transition-colors">Suporte ao Aluno</a>
            </div>
            <div className="h-px w-32 bg-slate-800 mx-auto opacity-50"></div>
-           <p className="text-[10px] opacity-25 uppercase tracking-[0.4em] font-medium leading-relaxed">
+           <p className="text-[10px] opacity-25 uppercase tracking-[0.4em] font-medium leading-relaxed block text-center w-full">
              &copy; 2025 • Criado com Paixão pela Confeitaria <br/>
              Todos os direitos reservados.
            </p>
